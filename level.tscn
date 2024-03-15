@@ -1,14 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1cq5uwso4bq5"]
+[gd_scene load_steps=11 format=3 uid="uid://b1cq5uwso4bq5"]
 
+[ext_resource type="Texture2D" uid="uid://24x5hwoh6i00" path="res://imports/block_PavingStones28_nrm.jpg" id="1_adama"]
 [ext_resource type="PackedScene" uid="uid://cty4loeaml0n5" path="res://assets/steve.tscn" id="1_ls66p"]
 [ext_resource type="Script" path="res://scripts/steve.gd" id="2_bf2ok"]
+[ext_resource type="Texture2D" uid="uid://ddcjcwbrsfmed" path="res://imports/block_PavingStones28_rgh.jpg" id="2_gfd3x"]
 [ext_resource type="Script" path="res://scripts/Boxy.gd" id="3_05jte"]
+[ext_resource type="Environment" uid="uid://g5f51tc235bf" path="res://sky.tres" id="4_q25wp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7j1y"]
 size = Vector3(30, 2, 30)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxqeu"]
 albedo_color = Color(0, 1, 0, 1)
+roughness_texture = ExtResource("2_gfd3x")
+normal_enabled = true
+normal_scale = 5.07
+normal_texture = ExtResource("1_adama")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_offset = Vector3(0.1, 0, 0)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_dm03n"]
 material = SubResource("StandardMaterial3D_rxqeu")
@@ -28,7 +38,7 @@ shape = SubResource("BoxShape3D_a7j1y")
 mesh = SubResource("BoxMesh_dm03n")
 
 [node name="Steve" parent="." instance=ExtResource("1_ls66p")]
-transform = Transform3D(-0.99983, 0.00151818, 0.0183773, 0.00151844, 0.999999, -9.23419e-12, -0.0183773, 2.79048e-05, -0.999831, 1.97671, 4.09382, -4.36752)
+transform = Transform3D(-0.99983, 0.00151818, 0.0183773, 0.00151844, 0.999999, -9.23419e-12, -0.0183773, 2.79048e-05, -0.999831, 1.977, 2, -4.368)
 script = ExtResource("2_bf2ok")
 
 [node name="Boxy" type="CharacterBody3D" parent="."]
@@ -42,4 +52,9 @@ mesh = SubResource("BoxMesh_pnk7k")
 skeleton = NodePath("")
 
 [node name="MainCamera" type="Camera3D" parent="Boxy"]
-transform = Transform3D(0.99983, 0.0105035, -0.0151562, -0.00151844, 0.866024, 0.499999, 0.0183774, -0.499891, 0.865893, 1.98067, 8.09359, 3.96396)
+transform = Transform3D(0.99983, 0.0105035, -0.0151562, -0.00486345, 0.943022, 0.332695, 0.0177871, -0.332565, 0.942913, 1.98067, 8.09359, 11.1533)
+environment = ExtResource("4_q25wp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.595706, 9.57809e-09, 0.803202, -0.803202, 7.10373e-09, 0.595706, 0, -1, 1.19249e-08, 0, 15.269, 0)
+shadow_enabled = true
