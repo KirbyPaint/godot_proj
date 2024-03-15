@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1cq5uwso4bq5"]
+[gd_scene load_steps=8 format=3 uid="uid://b1cq5uwso4bq5"]
 
 [ext_resource type="PackedScene" uid="uid://cty4loeaml0n5" path="res://assets/steve.tscn" id="1_ls66p"]
 [ext_resource type="Script" path="res://scripts/steve.gd" id="2_bf2ok"]
@@ -10,7 +10,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7j1y"]
 size = Vector3(30, 2, 30)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxqeu"]
+albedo_color = Color(0, 1, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_dm03n"]
+material = SubResource("StandardMaterial3D_rxqeu")
 size = Vector3(30, 2, 30)
 
 [node name="Level" type="Node3D"]
