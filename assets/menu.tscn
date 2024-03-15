@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://n5rc3tuoxcer"]
+
+[ext_resource type="Script" path="res://scripts/ButtonTitlePlay.gd" id="1_tx1tm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(19.4261, 31.5446)
+text = "fuck this"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(31.9953, 17.891)
+color = Color(0, 1, 1, 1)
+
+[node name="ButtonTitlePlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 57.9999
+offset_top = 5.0
+offset_right = 98.9999
+offset_bottom = 36.0
+scale = Vector2(28.4908, 13.1406)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "play"
+script = ExtResource("1_tx1tm")
+
+[connection signal="pressed" from="ButtonTitlePlay" to="ButtonTitlePlay" method="_on_pressed"]
