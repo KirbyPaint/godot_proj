@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cty4loeaml0n5"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_s805f"]
+[ext_resource type="ArrayMesh" uid="uid://dq8tmbqnmlrsg" path="res://assets/playerball.tres" id="1_mxwjm"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_7un8i"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_s805f"]
+size = Vector3(2, 2, 2)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 
@@ -10,4 +11,4 @@
 shape = SubResource("BoxShape3D_s805f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_7un8i")
+mesh = ExtResource("1_mxwjm")
